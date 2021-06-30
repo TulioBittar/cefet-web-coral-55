@@ -1,6 +1,6 @@
-const TEMPO_MINIMO = 1000;    // 1s em milissegundos
-const TEMPO_VARIAVEL = 3000;  // 3s
-const DURACAO = 5000;         // 5s
+const TEMPO_MINIMO = 100;    // 1s em milissegundos
+const TEMPO_VARIAVEL = 2000;  // 3s
+const DURACAO = 6000;         // 5s
 const bolhaEl = carregaUmaImagem('images/bolha.png');
 
 function carregaUmaImagem(path) {
@@ -18,7 +18,6 @@ function getLarguraJanela() {
     document.documentElement.clientWidth
   );
 }
-
 
 function criaUmaBolha() {
   const novaBolhaEl = bolhaEl.cloneNode();
@@ -44,19 +43,12 @@ function criaUmaBolha() {
     novaBolhaEl.remove();
   }, DURACAO);
 
-
   // pelo menos, vai esperar por TEMPO_MINIMO. Mas pode, adicionalmente,
   // esperar por mais [0%....100%] x TEMPO_VARIAVEL
   const proximaBolhaDaqui = TEMPO_MINIMO + Math.random() * TEMPO_VARIAVEL;
   setTimeout(criaUmaBolha, proximaBolhaDaqui);
 }
 
-
-
-
 criaUmaBolha();
 
-
-
-
-criaUmaBolha();
+CriaUmaBolha();
